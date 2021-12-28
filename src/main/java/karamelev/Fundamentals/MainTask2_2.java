@@ -14,8 +14,6 @@ public class MainTask2_2 {
 
 
         int[][] array = new int[n][n];
-//                {(int) (Math.random() * M - 1)},
-//                {(int) (Math.random() * -M - 1)}
 
         for (int i = 0; i < n; i++) { // заполнение массива
             for (int j = 0; j < n; j++) {
@@ -24,7 +22,7 @@ public class MainTask2_2 {
             }
         }
 
-        for (int i = 0; i < n; i++) { //вывод массива
+        for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(array[i][j]);
                 System.out.print(", ");
@@ -32,19 +30,19 @@ public class MainTask2_2 {
             System.out.print("\n");
         }
 
-        boolean isSorted = false;// переменная флаг
-        while (!isSorted) {// пока массив не отсортирован
-            isSorted = true;// массив отсортирован
+        boolean isSorted = false;
+        while (!isSorted) {
+            isSorted = true;
             for (int j = 0; j < n - 1; j++) {
                 if (array[k][j] > array[k][j+1]) {
-                    isSorted = false;// если передвигаем хотя бы одну строку то предполагаем что весь массив не отсортирован
+                    isSorted = false;
 
-                    for (int i = 0; i < n; i++) { // меняем строки местами (сортируем массив
+                    for (int i = 0; i < n; i++) {
                         int buf = array[i][j];
                         array[i][j] = array[i][j+1];
                         array[i][j+1] = buf;
                     }
-                    System.out.println("перенос столбца");// вывод
+                    System.out.println("перенос столбца");
                     for (int z = 0; z < n; z++) {
                         for (int t = 0; t < n; t++) {
                             System.out.print(array[z][t]);
@@ -56,7 +54,7 @@ public class MainTask2_2 {
             }
             System.out.print("\n");
 
-            for (int i = 0; i < n; i++) { // вывод отсортированного массива
+            for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
                     System.out.print(array[i][j]);
                     System.out.print(", ");
